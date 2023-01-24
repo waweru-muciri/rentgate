@@ -22,9 +22,11 @@ import * as maintenanceRequestsActions from "./maintenanceRequests";
 import { auth, firebaseStorage, firebaseFunctions } from "../firebase";
 import { getDatabaseRef } from "./firebaseHelpers";
 import { doc, getDocs, deleteDoc, collection, updateDoc, addDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getStorage, ref } from "firebase/storage";
+import { getFunctions } from "firebase/functions";
 
-
-const firebaseStorageRef = firebaseStorage.ref();
+const firebaseStorageRef = ref;
 const setAdminCustomClaim = firebaseFunctions.httpsCallable('setAdminCustomClaim');
 export const setDatabaseRefCustomClaim = firebaseFunctions.httpsCallable('setDatabaseRefCustomClaim');
 export const createFirebaseUser = firebaseFunctions.httpsCallable('createFirebaseUser');
@@ -454,15 +456,9 @@ export function handleItemFormSubmit(data, url) {
             dispatch(itemsIsLoading(true))
             typeof data.id !== "undefined"
                 ? //send post request to edit the item
-                getDatabaseRef()
-                    .collection(url)
-                    .doc(data.id)
-                    .update(data)
+                updateDoc(doc(getDatabaseRef, url, data.id), data)
                     .then((docRef) => {
-                        let modifiedObject = Object.assign(
-                            {},
-                            data,
-                        );
+                        const modifiedObject = { ...data }
                         switch (url) {
                             case "property-settings":
                                 dispatch(propertySettingsActions.editPropertySetting(modifiedObject));
@@ -552,11 +548,9 @@ export function handleItemFormSubmit(data, url) {
                         dispatch(itemsIsLoading(false));
                     })
                 : //send post to create item
-                getDatabaseRef()
-                    .collection(url)
-                    .add(data)
+                addDoc(collection(getDatabaseRef, url), data)
                     .then((docRef) => {
-                        let addedItem = Object.assign({}, data, {
+                        const addedItem = Object.assign({}, data, {
                             id: docRef.id,
                         });
                         switch (url) {

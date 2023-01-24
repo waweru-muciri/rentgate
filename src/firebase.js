@@ -1,4 +1,8 @@
-import {auth as firebaseAuth, firestore, functions, storage, initializeApp} from "firebase";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore, CACHE_SIZE_UNLIMITED } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { getFunctions } from "firebase/functions";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -12,8 +16,10 @@ var firebaseConfig = {
 	measurementId: "G-X1Y3NZTL1J",
 };
 // Initialize firebase
-initializeApp(firebaseConfig);
-export const auth = firebaseAuth()
-export const firebaseStorage = storage()
-export const firebaseFirestore = firestore()
-export const firebaseFunctions = functions()
+const app = initializeApp(firebaseConfig, {
+	cacheSizeBytes: CACHE_SIZE_UNLIMITED
+});
+export const auth = getAuth(app)
+export const firebaseStorage = getStorage(app)
+export const firebaseFirestore = getFirestore(app)
+export const firebaseFunctions = getFunctions(app)

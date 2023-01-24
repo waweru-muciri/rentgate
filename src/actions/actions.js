@@ -21,6 +21,7 @@ import * as meterReadingsActions from "./meterReadings";
 import * as maintenanceRequestsActions from "./maintenanceRequests";
 import { auth, firebaseStorage, firebaseFunctions } from "../firebase";
 import { getDatabaseRef } from "./firebaseHelpers";
+import { doc, getDocs, deleteDoc, collection, updateDoc, addDoc } from "firebase/firestore";
 
 
 const firebaseStorageRef = firebaseStorage.ref();
@@ -177,6 +178,111 @@ export async function uploadFilesToFirebase(fileToUpload) {
     }
 }
 
+
+export function fetchItems(url) {
+    return async (dispatch) => {
+        try {
+            const snapshot = await getDocs(collection(db, url))
+            const fetchedItems = snapshot.docs.map((doc) => {
+                const fetchedObject = Object.assign({}, doc.data(),
+                    {
+                        id: doc.id,
+                    }
+                );
+                return fetchedObject;
+            });
+            switch (url) {
+                case "property-settings":
+                    dispatch(propertySettingsActions.propertySettingsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "company_profile":
+                    dispatch(companyProfileActions.companyProfilesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "account-billing":
+                    dispatch(accountBillingActions.accountBillingsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "properties":
+                    dispatch(propertyActions.propertiesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "property_units":
+                    dispatch(propertyUnitActions.propertyUnitsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "leases":
+                    dispatch(leaseActions.leasesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "unit-charges":
+                    dispatch(propertyUnitChargeActions.propertyUnitChargesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "contacts":
+                    dispatch(contactsActions.contactsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "transactions-charges":
+                    dispatch(rentalChargesActions.rentalChargesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "charge-payments":
+                    dispatch(rentalPaymentsActions.rentalPaymentsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "to-dos":
+                    dispatch(toDoActions.toDosFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "maintenance-requests":
+                    dispatch(maintenanceRequestsActions.maintenanceRequestsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "notices":
+                    dispatch(vacatingNoticesActions.noticesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "email-templates":
+                    dispatch(emailTemplatesActions.emailTemplatesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "management-fees":
+                    dispatch(managementFeesActions.managementFeesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "expenses":
+                    dispatch(expensesActions.expensesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "credit-notes":
+                    dispatch(creditNotesActions.creditNotesFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "meter_readings":
+                    dispatch(meterReadingsActions.meterReadingsFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "users":
+                    dispatch(usersActions.usersFetchDataSuccess(fetchedItems));
+                    break;
+
+                case "communication_emails":
+                    dispatch(communicationEmailsActions.communicationEmailsFetchDataSuccess(fetchedItems));
+                    break;
+
+                default:
+                    break;
+            }
+        } catch (error) {
+            dispatch(itemsHasErrored(error.message))
+            dispatch(itemsIsLoading(false));
+        }
+        dispatch(itemsIsLoading(false));
+    }
+}
+
 export function itemsFetchData(collectionsUrls) {
     return (dispatch) => {
         dispatch(itemsIsLoading(true));
@@ -194,90 +300,7 @@ export function itemsFetchData(collectionsUrls) {
                     );
                     fetchedItems.push(fetchedObject)
                 });
-                switch (url) {
-                    case "property-settings":
-                        dispatch(propertySettingsActions.propertySettingsFetchDataSuccess(fetchedItems));
-                        break;
 
-                    case "company_profile":
-                        dispatch(companyProfileActions.companyProfilesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "account-billing":
-                        dispatch(accountBillingActions.accountBillingsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "properties":
-                        dispatch(propertyActions.propertiesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "property_units":
-                        dispatch(propertyUnitActions.propertyUnitsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "leases":
-                        dispatch(leaseActions.leasesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "unit-charges":
-                        dispatch(propertyUnitChargeActions.propertyUnitChargesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "contacts":
-                        dispatch(contactsActions.contactsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "transactions-charges":
-                        dispatch(rentalChargesActions.rentalChargesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "charge-payments":
-                        dispatch(rentalPaymentsActions.rentalPaymentsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "to-dos":
-                        dispatch(toDoActions.toDosFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "maintenance-requests":
-                        dispatch(maintenanceRequestsActions.maintenanceRequestsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "notices":
-                        dispatch(vacatingNoticesActions.noticesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "email-templates":
-                        dispatch(emailTemplatesActions.emailTemplatesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "management-fees":
-                        dispatch(managementFeesActions.managementFeesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "expenses":
-                        dispatch(expensesActions.expensesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "credit-notes":
-                        dispatch(creditNotesActions.creditNotesFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "meter_readings":
-                        dispatch(meterReadingsActions.meterReadingsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "users":
-                        dispatch(usersActions.usersFetchDataSuccess(fetchedItems));
-                        break;
-
-                    case "communication_emails":
-                        dispatch(communicationEmailsActions.communicationEmailsFetchDataSuccess(fetchedItems));
-                        break;
-
-                    default:
-                        break;
-                }
             } catch (error) {
                 dispatch(itemsHasErrored(error.message))
                 dispatch(itemsIsLoading(false));
@@ -319,10 +342,7 @@ export function handleDelete(itemId, url) {
     //send request to server to delete selected item
     return async (dispatch) => {
         try {
-            await getDatabaseRef()
-                .collection(url)
-                .doc(itemId)
-                .delete();
+            await deleteDoc(doc(getDatabaseRef, url, itemId))
             switch (url) {
                 case "property-settings":
                     dispatch(propertySettingsActions.deletePropertySetting(itemId));
@@ -540,7 +560,7 @@ export function handleItemFormSubmit(data, url) {
                             id: docRef.id,
                         });
                         switch (url) {
-                            
+
                             case "property-settings":
                                 dispatch(propertySettingsActions.addPropertySetting(addedItem));
                                 break;

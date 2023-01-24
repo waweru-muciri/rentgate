@@ -5,54 +5,8 @@ import {
   setCurrentUser,
   itemsHasErrored, getFirebaseUserDetails
 } from "../actions/actions";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useHistory,
-  withRouter,
-} from "react-router-dom";
-import DashBoard from "./DashBoard";
-import LoadingBackdrop from '../components/LoadingBackdrop'
-import ErrorBoundary from '../components/ErrorBoundary'
-import NotFound from "./NotFound"
-import { auth } from '../firebase'
-const PropertyUnitPage = lazy(() => import('./PropertyUnitPage'));
-const TenantDetailsPage = lazy(() => import('./TenantDetailsPage'));
-const PropertyPage = lazy(() => import('./PropertyPage'));
-const PropertiesPage = lazy(() => import('./Properties'));
-const ExpensesPage = lazy(() => import('./Expenses'));
-const ExpensePage = lazy(() => import('./ExpensePage'));
-const UsersPage = lazy(() => import('./Users'));
-const LeasePage = lazy(() => import('./LeasePage'));
-const LeasesPage = lazy(() => import('./Leases'));
-const RentRollPage = lazy(() => import('./RentRoll'));
-const ContactsPage = lazy(() => import('./Contacts'));
-const ContactPage = lazy(() => import('./ContactPage'));
-const PaymentsPage = lazy(() => import('./Payments'));
-const CreditNotesPage = lazy(() => import('./CreditNotes'));
-const MaintenancesPage = lazy(() => import('./Maintenances'));
-const PropertyDetailsPage = lazy(() => import('./PropertyDetails'));
-const UserPage = lazy(() => import('./UserPage'));
-const UserProfilePage = lazy(() => import('./UserProfilePage'));
-const ManagementFeePage = lazy(() => import('./ManagementFeePage'));
-const MaintenanceRequestPage = lazy(() => import('./MaintenanceRequestPage'));
-const ToDosPage = lazy(() => import('./ToDos'));
-const DocumentsTemplatesPage = lazy(() => import('./DocumentsTemplates'));
-const DocumentTemplatePage = lazy(() => import('./DocumentTemplatePage'));
-const NoticePage = lazy(() => import('./NoticePage'));
-const NoticesPage = lazy(() => import('./Notices'));
-const PropertyIncomeStatement = lazy(() => import('./PropertyIncomeStatement'));
-const PropertyPerformancePage = lazy(() => import('./PropertyPerformancePage'));
-const TenantsStatementsPage = lazy(() => import('./TenantsStatements'));
-const EmailPage = lazy(() => import('./EmailPage'));
-const EmailsPage = lazy(() => import('./Emails'));
-const AccountSettingsPage = lazy(() => import('./AccountSettings'));
-const MeterReadingPage = lazy(() => import('./MeterReadingPage'));
-const MeterReadingsPage = lazy(() => import('./MeterReadings'));
-const OtherChargesPage = lazy(() => import('./OtherCharges'));
-const ChargeOnDeposit = lazy(() => import('./ChargeOnDeposits'));
-const OutstandingBalancesPage = lazy(() => import('./OutstandingBalances'));
+
+
 
 
 let MainPage = ({

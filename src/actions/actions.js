@@ -22,11 +22,10 @@ import * as maintenanceRequestsActions from "./maintenanceRequests";
 import { auth, firebaseStorage, firebaseFunctions } from "../firebase";
 import { getDatabaseRef } from "./firebaseHelpers";
 import { doc, getDocs, deleteDoc, collection, updateDoc, addDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getStorage, ref } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { getFunctions } from "firebase/functions";
+import { signOut, getIdTokenResult, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 
-const firebaseStorageRef = ref;
 const setAdminCustomClaim = firebaseFunctions.httpsCallable('setAdminCustomClaim');
 export const setDatabaseRefCustomClaim = firebaseFunctions.httpsCallable('setDatabaseRefCustomClaim');
 export const createFirebaseUser = firebaseFunctions.httpsCallable('createFirebaseUser');
@@ -48,8 +47,7 @@ const firebaseGetOptions = {
 
 export const firebaseSignOutUser = () => {
     return (dispatch) => {
-        auth
-            .signOut()
+        signOut(auth)
             .then(function () {
 
             })
@@ -62,7 +60,7 @@ export const firebaseSignOutUser = () => {
 }
 
 export const getFirebaseUserDetails = async (userToken) => {
-    const idTokenResult = await userToken.getIdTokenResult()
+    const idTokenResult = await getIdTokenResult(userToken)
     let isAdmin;
     let tenantId;
     if (idTokenResult.claims) {
@@ -83,7 +81,7 @@ export const getFirebaseUserDetails = async (userToken) => {
 }
 
 export const resetUserPasswordByEmail = async (email) => {
-    return await auth.sendPasswordResetEmail(email, { handleCodeInApp: false, url: 'https://rentgatepm.com/account-actions/' })
+    return await sendPasswordResetEmail(auth, email, { handleCodeInApp: false, url: 'https://rentgatepm.com/account-actions/' })
 }
 
 export const signUpWithEmailAndPassword = async (userDetails) => {
@@ -100,7 +98,7 @@ export const signUpWithEmailAndPassword = async (userDetails) => {
 
 export const signInUserWithEmailAndPassword = async (email, password) => {
     try {
-        const authCredential = await auth.signInWithEmailAndPassword(email, password);
+        const authCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = authCredential.user;
         const userDetails = getFirebaseUserDetails(user)
         return userDetails;
@@ -138,45 +136,63 @@ export async function sendEmails(from_user, subject, email, recipients) {
 }
 
 export async function deleteUploadedFileByUrl(fileUrl) {
-    return await firebaseStorage.refFromURL(fileUrl).delete().then(() => console.log('Successfully deleted file')).catch((error) => console.log('Error deleting file => ', error))
+    return await deleteObject(ref(firebaseStorage, fileUrl))
+        .then(() => console.log('Successfully deleted file'))
+        .catch((error) => console.log('Error deleting file => ', error))
+}
+
+export async function uploadImageAsync(uri) {
+    // Why are we using XMLHttpRequest? See:
+    // https://github.com/expo/expo/issues/2402#issuecomment-443726662
+    const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            resolve(xhr.response);
+        };
+        xhr.onerror = function (e) {
+            console.log(e);
+            reject(new TypeError("Network request failed"));
+        };
+        xhr.responseType = "blob";
+        xhr.open("GET", uri, true);
+        xhr.send(null);
+    });
+
+    const fileRef = ref(firebaseStorage, "propertyImages");
+    const result = await uploadBytes(fileRef, blob);
+
+    // We're done with the blob, close and release it
+    blob.close();
+
+    return await getDownloadURL(fileRef);
 }
 
 export async function uploadFilesToFirebase(fileToUpload) {
-    var fileRef = firebaseStorageRef.child(`propertyImages/${fileToUpload.name}`);
     try {
-        const snapshot = await fileRef
-            .putString(fileToUpload.data, "data_url");
-        // console.log("Uploaded files successfully.");
-        try {
-            const url = await snapshot.ref.getDownloadURL();
-            return url;
-        }
-        catch (error) {
-            switch (error.code) {
-                case "storage/object-not-found":
-                    console.log("File doesn't exist");
-                    break;
-                case "storage/unauthorized":
-                    console.log(
-                        "User doesn't have permission to access the object"
-                    );
-                    break;
-                case "storage/canceled":
-                    console.log("User canceled the upload");
-                    break;
-                case "storage/unknown":
-                    console.log(
-                        "Unknown error occurred, inspect the server response"
-                    );
-                    break;
-                default:
-                    console.log('Unknown error');
-            }
-        }
+        const url = await uploadImageAsync(fileToUpload.data);
+        return url;
     }
-    catch (error_1) {
-        console.log("Error during file upload => ", error_1);
-        return ''
+    catch (error) {
+        switch (error.code) {
+            case "storage/object-not-found":
+                console.log("File doesn't exist");
+                break;
+            case "storage/unauthorized":
+                console.log(
+                    "User doesn't have permission to access the object"
+                );
+                break;
+            case "storage/canceled":
+                console.log("User canceled the upload");
+                break;
+            case "storage/unknown":
+                console.log(
+                    "Unknown error occurred, inspect the server response"
+                );
+                break;
+            default:
+                console.log('Error uploading file', error);
+        }
     }
 }
 

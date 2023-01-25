@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { CACHE_SIZE_UNLIMITED } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -16,3 +18,5 @@ var firebaseConfig = {
 initializeApp(firebaseConfig, {
 	cacheSizeBytes: CACHE_SIZE_UNLIMITED
 });
+export const auth = getAuth(app);
+export const firebaseStorage = getStorage(app);

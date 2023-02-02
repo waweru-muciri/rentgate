@@ -1,4 +1,4 @@
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import React from "react";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
 import exportDataToXSL, { exportPropertyStatementDataToXSL } from "../assets/PrintingHelper";

@@ -1,5 +1,5 @@
-import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
 import React from "react";
 
 

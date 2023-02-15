@@ -1,7 +1,7 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import CancelIcon from "@material-ui/icons/Cancel";
 import CustomSnackbar from '../CustomSnackbar'
@@ -10,9 +10,9 @@ import { commonStyles } from "../commonStyles";
 import * as Yup from "yup";
 import { format, startOfToday } from "date-fns";
 import CustomCircularProgress from "../CustomCircularProgress";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
 
 
 const defaultDate = format(startOfToday(), 'yyyy-MM-dd')

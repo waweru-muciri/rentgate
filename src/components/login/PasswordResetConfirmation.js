@@ -8,7 +8,7 @@ import {
     Typography,
     FormControl,
     FormHelperText,
-} from "@material-ui/core";
+} from "@mui/material";
 import { Formik } from "formik";
 import { commonStyles } from "../commonStyles";
 import * as Yup from "yup";

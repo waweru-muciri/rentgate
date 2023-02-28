@@ -1,9 +1,9 @@
 import React from "react";
-import { Dialog, Button, FormHelperText, FormControl, TextField } from "@material-ui/core";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import { Dialog, Button, FormHelperText, FormControl, TextField } from "@mui/material";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { resetUserPasswordByEmail } from "../../actions/actions";

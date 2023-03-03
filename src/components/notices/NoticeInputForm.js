@@ -1,17 +1,17 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import CustomSnackbar from '../CustomSnackbar'
 import { Formik } from "formik";
 import { commonStyles } from "../commonStyles";
 import SaveIcon from "@material-ui/icons/Save";
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Switch from '@material-ui/core/Switch';
+import Switch from '@mui/material/Switch';
 import CancelIcon from "@material-ui/icons/Cancel";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import * as Yup from "yup";
 import { format, startOfToday } from "date-fns";
 import CustomCircularProgress from "../CustomCircularProgress";

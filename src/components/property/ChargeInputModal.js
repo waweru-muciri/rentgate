@@ -1,18 +1,18 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import CancelIcon from "@material-ui/icons/Cancel";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 import CustomSnackbar from '../CustomSnackbar'
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { getPaymentOptions } from "../../assets/commonAssets.js";
 import { commonStyles } from "../commonStyles.js";
-import { DialogTitle } from "@material-ui/core";
+import { DialogTitle } from "@mui/material";
 import CustomCircularProgress from "../CustomCircularProgress";
 
 const RENT_CYCLES = getPaymentOptions();

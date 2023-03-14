@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import ChargesTable from './ChargesTable'
 import ChargeInputModal from './ChargeInputModal'
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import CancelIcon from "@material-ui/icons/Cancel";
 import AddIcon from "@material-ui/icons/Add";

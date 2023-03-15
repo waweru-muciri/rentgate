@@ -8,13 +8,13 @@ import {
 	RadioGroup,
 	Radio,
 	Grid,
-} from "@material-ui/core";
+} from "@mui/material";
 import SaveIcon from "@material-ui/icons/Save";
 import CancelIcon from "@material-ui/icons/Cancel";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogTitle from "@mui/material/DialogTitle";
 import CustomCircularProgress from "../CustomCircularProgress";
 import CustomSnackbar from '../CustomSnackbar';
 import Autocomplete from '@material-ui/lab/Autocomplete';

@@ -1,16 +1,16 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-import Avatar from "@material-ui/core/Avatar";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import MenuItem from "@material-ui/core/MenuItem";
-import Grid from "@material-ui/core/Grid";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
+import Grid from "@mui/material/Grid";
 import SaveIcon from "@material-ui/icons/Save";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { useHistory } from "react-router-dom";
 import { commonStyles } from "../commonStyles";
-import IconButton from "@material-ui/core/IconButton";
+import IconButton from "@mui/material/IconButton";
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import {
     getContactTitles,

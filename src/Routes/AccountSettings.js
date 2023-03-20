@@ -1,15 +1,15 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
+import { Grid } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Layout from "../components/PrivateLayout";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Tab from '@material-ui/core/Tab';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Button from "@material-ui/core/Button";
+import Tab from '@mui/material/Tab';
+import AppBar from '@mui/material/AppBar';
+import Tabs from '@mui/material/Tabs';
+import Button from "@mui/material/Button";
 import TabPanel from "../components/TabPanel";
-import TextField from "@material-ui/core/TextField";
+import TextField from "@mui/material/TextField";
 import SaveIcon from "@material-ui/icons/Save";
 import CommonTable from "../components/table/commonTable";
 import CustomSnackbar from '../components/CustomSnackbar'

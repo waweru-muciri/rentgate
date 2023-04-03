@@ -1,12 +1,12 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import PageHeading from "../components/PageHeading";
 import Layout from "../components/PrivateLayout";
 import { connect } from "react-redux";
 import ManagementFeesInputForm from "../components/users/ManagementFeesInputForm";
 import { withRouter } from "react-router-dom";
 import { handleItemFormSubmit } from '../actions/actions'
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 
 let ManagementFeePage = ({ properties, currentUser, managementFeeToEdit, handleItemSubmit, history }) => {
     const pageTitle = managementFeeToEdit.id ? "Edit Management Fee" : "Collect Management Fee";

@@ -4,7 +4,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import SearchIcon from "@material-ui/icons/Search";
 import UndoIcon from "@material-ui/icons/Undo";
 import AddIcon from "@material-ui/icons/Add";
-import { Grid, TextField, Button, MenuItem, Box } from "@material-ui/core";
+import { Grid, TextField, Button, MenuItem, Box } from "@mui/material";
 import { handleDelete, itemsFetchData } from "../actions/actions";
 import CommonTable from "../components/table/commonTable";
 import { withRouter } from "react-router-dom";

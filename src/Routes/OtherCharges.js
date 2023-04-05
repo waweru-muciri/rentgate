@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/PrivateLayout";
 import PageHeading from "../components/PageHeading";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Box from "@material-ui/core/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 import SearchIcon from "@material-ui/icons/Search";
 import AddIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";

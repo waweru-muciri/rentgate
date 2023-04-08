@@ -1,7 +1,7 @@
 import Layout from "../components/PrivateLayout";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
-import { Box, TextField, Button } from "@material-ui/core";
+import { Box, TextField, Button } from "@mui/material";
 import EditIcon from "@material-ui/icons/Edit";
 import SearchIcon from "@material-ui/icons/Search";
 import UndoIcon from "@material-ui/icons/Undo";

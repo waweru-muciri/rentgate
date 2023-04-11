@@ -1,16 +1,16 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import CardActionArea from '@mui/material/CardActionArea';
 import TenantInfoDisplayCard from "../components/TenantInfoDisplayCard";
-import TEAL from '@material-ui/core/colors/teal';
-import RED from '@material-ui/core/colors/red';
-import GREEN from '@material-ui/core/colors/green';
+import TEAL from '@mui/material/colors/teal';
+import RED from '@mui/material/colors/red';
+import GREEN from '@mui/material/colors/green';
 import { Doughnut } from 'react-chartjs-2';
-import GREY from "@material-ui/core/colors/grey";
+import GREY from "@mui/material/colors/grey";
 import { isWithinInterval, startOfMonth, startOfToday, endOfMonth, parse } from 'date-fns';
 import { getUnitTypes } from "../assets/commonAssets";
 

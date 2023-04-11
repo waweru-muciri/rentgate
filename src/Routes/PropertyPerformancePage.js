@@ -3,12 +3,12 @@ import Layout from "../components/PrivateLayout";
 import { connect } from "react-redux";
 import PageHeading from "../components/PageHeading";
 import InfoDisplayPaper from "../components/InfoDisplayPaper";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import { Bar, HorizontalBar } from 'react-chartjs-2';
 import { commonStyles } from '../components/commonStyles'

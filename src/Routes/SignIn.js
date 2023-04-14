@@ -1,17 +1,17 @@
 import React from "react";
 import Layout from "../components/GeneralLayout";
-import Typography from "@material-ui/core/Typography"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
-import Grid from "@material-ui/core/Grid"
+import Typography from "@mui/material/Typography"
+import TextField from "@mui/material/TextField"
+import Button from "@mui/material/Button"
+import Grid from "@mui/material/Grid"
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from '@mui/material/Avatar';
 import { connect } from "react-redux";
 import { Formik } from "formik";
 import { signInUserWithEmailAndPassword, setCurrentUser } from "../actions/actions";
 import PasswordResetDialog from "../components/login/ResetPassword";
 import * as Yup from "yup";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/material/styles";
 import { useHistory } from "react-router-dom";
 
 const SignInSchema = Yup.object().shape({

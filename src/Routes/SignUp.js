@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../components/GeneralLayout";
 import { Link as RouterLink } from "react-router-dom";
-import Typography from "@material-ui/core/Typography"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
-import Grid from "@material-ui/core/Grid"
+import Typography from "@mui/material/Typography"
+import TextField from "@mui/material/TextField"
+import Button from "@mui/material/Button"
+import Grid from "@mui/material/Grid"
 import Alert from "@material-ui/lab/Alert"
-import Box from "@material-ui/core/Box"
+import Box from "@mui/material/Box"
 import { connect } from "react-redux";
 import { Formik } from "formik";
 import { signUpWithEmailAndPassword } from "../actions/actions";

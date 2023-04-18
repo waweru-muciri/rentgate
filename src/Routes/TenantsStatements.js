@@ -1,8 +1,8 @@
 import React, { lazy } from "react";
 import Layout from "../components/PrivateLayout";
-import Tab from '@material-ui/core/Tab';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
+import Tab from '@mui/material/Tab';
+import AppBar from '@mui/material/AppBar';
+import Tabs from '@mui/material/Tabs';
 import TabPanel from "../components/TabPanel";
 import { commonStyles } from '../components/commonStyles'
 import { connect } from "react-redux";

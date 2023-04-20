@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/PrivateLayout";
 import PageHeading from "../components/PageHeading";
 import ToDoInputForm from "../components/to-dos/ToDoInputForm.js";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import { connect } from "react-redux";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";

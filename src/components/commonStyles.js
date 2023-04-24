@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { red } from '@material-ui/core/colors';
+import { makeStyles } from "@mui/material/styles";
+import { red } from '@mui/material/colors';
 
 const drawerWidth = 240;
 

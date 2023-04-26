@@ -1,14 +1,14 @@
 import Layout from "../components/PrivateLayout";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
 import SearchIcon from "@material-ui/icons/Search";
 import UndoIcon from "@material-ui/icons/Undo";
 import AddIcon from "@material-ui/icons/Add";
-import TextField from "@material-ui/core/TextField";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { connect } from "react-redux";
 import { handleDelete, deleteFirebaseUsers } from "../actions/actions";
 import PageHeading from "../components/PageHeading";

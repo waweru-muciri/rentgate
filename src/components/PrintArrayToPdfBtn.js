@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import React from "react";
-import PrintIcon from "@material-ui/icons/Print";
+import PrintIcon from "@mui/icons-material/Print";
 import { printDataRows } from "../assets/PrintingHelper";
 import PropTypes from 'prop-types';
 

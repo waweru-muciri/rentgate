@@ -2,15 +2,15 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import CustomSnackbar from '../CustomSnackbar'
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import Grid from "@mui/material/Grid";
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { connect } from "react-redux";
 import { Formik } from "formik";
 import {

@@ -6,8 +6,8 @@ import MenuItem from "@mui/material/MenuItem";
 import CustomSnackbar from '../CustomSnackbar'
 import { Formik } from "formik";
 import { commonStyles } from "../commonStyles";
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel"; import {
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel"; import {
   getMeterTypes,
 } from "../../assets/commonAssets.js";
 import * as Yup from "yup";

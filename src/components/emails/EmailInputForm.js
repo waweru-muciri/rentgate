@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
-import CancelIcon from "@material-ui/icons/Cancel";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { Formik } from "formik";
 import EmailsSelect from "./EmailsSelect";
 import { commonStyles } from "../commonStyles";

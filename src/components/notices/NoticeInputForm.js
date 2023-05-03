@@ -6,10 +6,10 @@ import Typography from "@mui/material/Typography";
 import CustomSnackbar from '../CustomSnackbar'
 import { Formik } from "formik";
 import { commonStyles } from "../commonStyles";
-import SaveIcon from "@material-ui/icons/Save";
+import SaveIcon from "@mui/icons-material/Save";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Switch from '@mui/material/Switch';
-import CancelIcon from "@material-ui/icons/Cancel";
+import CancelIcon from "@mui/icons-material/Cancel";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import * as Yup from "yup";

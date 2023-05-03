@@ -3,8 +3,8 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import CustomSnackbar from '../CustomSnackbar'

@@ -4,12 +4,12 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel";
-import DeleteIcon from "@material-ui/icons/Delete";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
+import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import CustomCircularProgress from "../CustomCircularProgress";
 import CustomSnackbar from '../CustomSnackbar'
 import { connect } from "react-redux";

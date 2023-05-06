@@ -10,7 +10,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import SaveIcon from "@material-ui/icons/Save";
+import SaveIcon from "@mui/icons-material/Save";
 import CustomSnackbar from '../CustomSnackbar'
 import Switch from '@mui/material/Switch';
 import { connect } from "react-redux";

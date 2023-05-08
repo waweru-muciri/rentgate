@@ -7,9 +7,9 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel";
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 import CustomSnackbar from '../CustomSnackbar'
 import { Formik } from "formik";
 import { uploadFilesToFirebase, deleteUploadedFileByUrl } from "../../actions/actions";

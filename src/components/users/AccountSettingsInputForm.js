@@ -6,12 +6,12 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Grid from "@mui/material/Grid";
-import SaveIcon from "@material-ui/icons/Save";
-import CancelIcon from "@material-ui/icons/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { useHistory } from "react-router-dom";
 import { commonStyles } from "../commonStyles";
 import IconButton from "@mui/material/IconButton";
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import {
     getContactTitles,
     getGendersList,

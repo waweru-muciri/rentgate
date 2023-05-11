@@ -10,7 +10,7 @@ import Tabs from '@mui/material/Tabs';
 import Button from "@mui/material/Button";
 import TabPanel from "../components/TabPanel";
 import TextField from "@mui/material/TextField";
-import SaveIcon from "@material-ui/icons/Save";
+import SaveIcon from "@mui/icons-material/Save";
 import CommonTable from "../components/table/commonTable";
 import CustomSnackbar from '../components/CustomSnackbar'
 import CustomCircularProgress from "../components/CustomCircularProgress";

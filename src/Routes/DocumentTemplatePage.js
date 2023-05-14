@@ -4,8 +4,8 @@ import Layout from "../components/PrivateLayout";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import CancelIcon from "@material-ui/icons/Cancel";
-import SaveIcon from "@material-ui/icons/Save";
+import CancelIcon from "@mui/icons-material/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
 import Typography from "@mui/material/Typography";
 import CustomSnackbar from '../components/CustomSnackbar'
 import { Formik } from "formik";

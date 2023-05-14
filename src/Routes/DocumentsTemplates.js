@@ -1,8 +1,8 @@
 import Layout from "../components/PrivateLayout";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AddIcon from "@material-ui/icons/Add";
-import EditIcon from "@material-ui/icons/Edit";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";

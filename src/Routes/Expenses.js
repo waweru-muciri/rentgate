@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import EditIcon from "@material-ui/icons/Edit";
-import SearchIcon from "@material-ui/icons/Search";
-import UndoIcon from "@material-ui/icons/Undo";
-import AddIcon from "@material-ui/icons/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import SearchIcon from "@mui/icons-material/Search";
+import UndoIcon from "@mui/icons-material/Undo";
+import AddIcon from "@mui/icons-material/Add";
 import { Grid, TextField, Button, MenuItem, Box } from "@mui/material";
 import { handleDelete } from "../actions/actions";
 import CommonTable from "../components/table/commonTable";

@@ -1,9 +1,9 @@
 import Layout from "../components/PrivateLayout";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from "@material-ui/icons/Search";
-import UndoIcon from "@material-ui/icons/Undo";
-import AddIcon from "@material-ui/icons/Add";
+import SearchIcon from "@mui/icons-material/Search";
+import UndoIcon from "@mui/icons-material/Undo";
+import AddIcon from "@mui/icons-material/Add";
 import { Grid, TextField, Button, Box } from "@mui/material";
 import { connect } from "react-redux";
 import { handleDelete, itemsFetchData } from "../actions/actions";

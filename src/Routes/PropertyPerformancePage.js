@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@mui/material/Search";
 import { Bar, HorizontalBar } from 'react-chartjs-2';
 import { commonStyles } from '../components/commonStyles'
 import * as Yup from "yup";

@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography"
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
 import Grid from "@mui/material/Grid"
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import LockOutlinedIcon from '@mui/material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import { connect } from "react-redux";
 import { Formik } from "formik";

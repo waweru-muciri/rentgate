@@ -40,6 +40,7 @@ import { Formik } from "formik";
 import { commonStyles } from "../components/commonStyles";
 import 'typeface-lato';
 import * as Yup from "yup";
+import emailjs from '@emailjs/browser';
 
 const messageSchema = Yup.object().shape({
     email: Yup.string().trim().email("Invalid email"),
@@ -297,14 +298,14 @@ export default function HomePage() {
                                     <Grid item>
                                         <Typography component="h3" variant="h3" className={classes.boldFont} gutterBottom>
                                             Management made easy
-                                </Typography>
+                                        </Typography>
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="h6" color="textSecondary">
                                             Increase efficiency and save time with our user-friendly platform.
                                             Choose the property management software designed to inspire and power
                                             you to manage your rental properties.
-                                </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                                 <Grid item container direction='row' spacing={2}>
@@ -332,14 +333,14 @@ export default function HomePage() {
                             <Grid item>
                                 <Typography component="h4" variant="h4" align="center" className={classes.boldFont}>
                                     We are reimagining renting to help you achieve your dreams
-                        </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item xs={10}>
                                 <Typography component="p" variant="h6" color="textSecondary" align="center">
                                     Through our software, you can keep up-to-date rental properties and units records, tenant
                                     details, rental agreements and occupancy records, resolve maintenance issues and
                                     update property financials, from anywhere.
-                        </Typography>
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid container item spacing={4} alignItems="flex-start" justify="center" direction="row">
@@ -373,7 +374,7 @@ export default function HomePage() {
                                 <Grid item xs={12}>
                                     <Typography component="h5" variant="h4" className={classes.boldFont}>
                                         The right software means managing your portfolio is easy.
-                            </Typography>
+                                    </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <Typography variant="h6" color="textSecondary">
@@ -383,7 +384,7 @@ export default function HomePage() {
                                         while keeping administration to a minimum.
                                         We also made sure to include all the modules and functionality that
                                         a property owner/manager could possibly need.
-                            </Typography>
+                                    </Typography>
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} md={6}>
@@ -400,7 +401,7 @@ export default function HomePage() {
                             <Grid item>
                                 <Typography component="h3" variant="h4" className={classes.boldFont} align="center">
                                     Featured Modules
-                        </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item xs={10}>
                                 <Typography component="p" variant="h6" color="textSecondary" align="center">
@@ -408,7 +409,7 @@ export default function HomePage() {
                                     tenants details, rental agreements with tenants,
                                     rent and other charges, payments to these charges, property expenses, property and
                                     tenants income and charges statements.
-                        </Typography>
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid item container spacing={4} alignItems="stretch" justify="center" direction="row">
@@ -449,7 +450,7 @@ export default function HomePage() {
                             <Grid item>
                                 <Typography component="h4" variant="h4" className={classes.boldFont}>
                                     What's included
-                            </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item>
                                 <Button variant="contained" color="primary" href="#pricing">EXPLORE OUR PACKAGES</Button>
@@ -481,12 +482,12 @@ export default function HomePage() {
                             <Grid item>
                                 <Typography variant="h4" align="center" className={classes.boldFont} gutterBottom>
                                     Choose the right plan for your team
-                        </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item>
                                 <Typography align="center" color="textSecondary" component="p">
                                     Pay monthly or yearly and cancel at any time
-                            </Typography>
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid container item spacing={5} alignItems="center" justify="center">
@@ -511,7 +512,7 @@ export default function HomePage() {
                                                         </Typography>
                                                         <Typography variant="h6" color="textSecondary">
                                                             /mo
-                                                </Typography>
+                                                        </Typography>
                                                     </div>
                                                 </Grid>
                                                 <Grid item xs={12}>
@@ -542,14 +543,14 @@ export default function HomePage() {
                             <Grid item>
                                 <Typography variant="h4" className={classes.boldFont} align="center">
                                     Trusted by Africa's most innovative companies – big and small
-                            </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item>
                                 <Typography component="p" variant="h6" align="center" color="textSecondary">
                                     RentGate empowers property owners and managers to deliver more than ever before by
                                     enhancing up-to-date record keeping, data authenticity and transparency, smart analytics
                                     and alerts, financial statements.
-                            </Typography>
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid container item spacing={4} alignItems="stretch" justify="center" direction="row">
@@ -599,28 +600,23 @@ export default function HomePage() {
                             <Formik
                                 initialValues={messageValues}
                                 validationSchema={messageSchema}
-                                onSubmit={async (values, { resetForm, setStatus }) => {
-                                    const data = {
+                                onSubmit={async (values, actions) => {
+                                    await emailjs.send('service_aub9auk', 'template_siub5fl', {
+                                        from_name: `${values.first_name} ${values.last_name}`,
+                                        to_name: "Brian Muciri",
+                                        message: values.subject,
+                                        reply_to: values.email,
+                                        from_email: values.email,
                                         phone_number: values.phone_number,
-                                        first_name: values.first_name,
-                                        last_name: values.last_name,
-                                        subject: values.subject,
-                                        message: values.message,
-                                        email: values.email
-                                    }
-                                    return fetch('https://us-central1-propertymanager-a321f.cloudfunctions.net/sendEmailTest', {
-                                        method: "POST",
-                                        headers: {
-                                            'Content-Type': 'application/json'
-                                        },
-                                        body: JSON.stringify(data)
-                                    }).then(response => {
-                                        resetForm({});
-                                        setStatus({ success: "Message sent successfully. We will get back to you soonest." });
-                                    }).catch(error => {
-                                        setStatus({ error: "Message sending failed!" });
-                                    })
-                                }}>
+
+                                    }, "NwbIMabzqHb_8LLa9").then((result) => {
+                                        setSnackBarOpen(true)
+                                        actions.resetForm()
+                                    }, (error) => {
+                                        console.log(error.text);
+                                    });
+                                }}
+                            >
                                 {({
                                     values,
                                     handleSubmit,
@@ -760,7 +756,7 @@ export default function HomePage() {
                                                         form="sendMessageForm"
                                                     >
                                                         Send Message
-                                                        </Button>
+                                                    </Button>
                                                 </Grid>
                                             </Grid>
                                         </Grid>

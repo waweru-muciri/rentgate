@@ -46,12 +46,12 @@ const messageSchema = Yup.object().shape({
     email: Yup.string().trim().email("Invalid email"),
     first_name: Yup.string().trim().min(4, "Too Short!").required("First Name is Required"),
     last_name: Yup.string().trim().min(4, "Too Short!").required("Last Name is Required"),
-    subject: Yup.string().trim().min(6, "Too Short!").required("Subject is Required"),
+    message: Yup.string().trim().min(6, "Too Short!").required("Message is Required"),
     phone_number: Yup.string().trim().min(10, "Too Short!").required("Phone Number is Required"),
     message: Yup.string().trim().min(6, "Too Short!").required("Message is Required"),
 });
 
-const messageValues = { first_name: '', last_name: '', email: '', subject: '', phone_number: '', message: '' }
+const messageValues = { first_name: '', last_name: '', email: '', message: '', phone_number: '', message: '' }
 
 function Copyright() {
     return (
@@ -604,7 +604,7 @@ export default function HomePage() {
                                     await emailjs.send('service_aub9auk', 'template_siub5fl', {
                                         from_name: `${values.first_name} ${values.last_name}`,
                                         to_name: "Brian Muciri",
-                                        message: values.subject,
+                                        message: values.message,
                                         reply_to: values.email,
                                         from_email: values.email,
                                         phone_number: values.phone_number,
@@ -714,16 +714,16 @@ export default function HomePage() {
                                                     <TextField
                                                         fullWidth
                                                         variant="outlined"
-                                                        id="subject"
-                                                        label="Subject"
+                                                        id="message"
+                                                        label="message"
                                                         type="text"
-                                                        value={values.subject}
+                                                        value={values.message}
                                                         onBlur={handleBlur}
                                                         onChange={handleChange}
                                                         helperText={
-                                                            touched.subject && errors.subject
+                                                            touched.message && errors.message
                                                         }
-                                                        error={errors.subject && touched.subject}
+                                                        error={errors.message && touched.message}
                                                         InputLabelProps={{ shrink: true }}
                                                     />
                                                 </Grid>

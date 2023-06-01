@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/GeneralLayout";
+import Layout from "../../components/GeneralLayout";
 import Typography from "@mui/material/Typography"
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
@@ -8,8 +8,8 @@ import LockOutlinedIcon from '@mui/material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import { connect } from "react-redux";
 import { Formik } from "formik";
-import { signInUserWithEmailAndPassword, setCurrentUser } from "../actions/actions";
-import PasswordResetDialog from "../components/login/ResetPassword";
+import { signInUserWithEmailAndPassword, setCurrentUser } from "../../actions/actions";
+import PasswordResetDialog from "../../components/login/ResetPassword";
 import * as Yup from "yup";
 import { makeStyles } from "@mui/material/styles";
 import { useHistory } from "react-router-dom";

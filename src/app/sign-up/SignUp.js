@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/GeneralLayout";
+import Layout from "../../components/GeneralLayout";
 import { Link as RouterLink } from "react-router-dom";
 import Typography from "@mui/material/Typography"
 import TextField from "@mui/material/TextField"
@@ -9,8 +9,8 @@ import Alert from "@material-ui/lab/Alert"
 import Box from "@mui/material/Box"
 import { connect } from "react-redux";
 import { Formik } from "formik";
-import { signUpWithEmailAndPassword } from "../actions/actions";
-import { commonStyles } from "../components/commonStyles";
+import { signUpWithEmailAndPassword } from "../../actions/actions";
+import { commonStyles } from "../../components/commonStyles";
 import * as Yup from "yup";
 
 const SignUpSchema = Yup.object().shape({

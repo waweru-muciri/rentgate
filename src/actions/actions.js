@@ -19,7 +19,7 @@ import * as expensesActions from "./expenses";
 import * as creditNotesActions from "./CreditNotes";
 import * as meterReadingsActions from "./meterReadings";
 import * as maintenanceRequestsActions from "./maintenanceRequests";
-import { auth, firebaseStorage, firebaseFunctions } from "../firebase";
+import { auth, firebaseStorage, firebaseFunctions } from "../components/firebase";
 import { getDatabaseRef } from "./firebaseHelpers";
 import { doc, getDocs, deleteDoc, collection, updateDoc, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";

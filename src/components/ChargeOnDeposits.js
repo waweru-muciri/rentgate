@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { handleItemFormSubmit } from '../actions/actions'
+import { handleItemFormSubmit } from '../reducers/api'
 import { withRouter } from "react-router-dom";
 import Layout from "./PrivateLayout";
 import Typography from "@mui/material/Typography";

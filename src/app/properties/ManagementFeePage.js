@@ -5,7 +5,7 @@ import Layout from "../../components/PrivateLayout";
 import { connect } from "react-redux";
 import ManagementFeesInputForm from "../../components/users/ManagementFeesInputForm";
 import { withRouter } from "react-router-dom";
-import { handleItemFormSubmit } from '../../actions/actions'
+import { handleItemFormSubmit } from '../../reducers/api'
 import Typography from "@mui/material/Typography";
 
 let ManagementFeePage = ({ properties, currentUser, managementFeeToEdit, handleItemSubmit, history }) => {

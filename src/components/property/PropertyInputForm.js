@@ -17,7 +17,7 @@ import { Formik, FieldArray } from "formik";
 import {
 	handleItemFormSubmit,
 	handleDelete, uploadFilesToFirebase, deleteUploadedFileByUrl
-} from "../../actions/actions";
+} from "../../reducers/api";
 import { commonStyles } from "../../components/commonStyles";
 import ImageCropper from '../ImageCropper';
 import { withRouter } from "react-router-dom";

@@ -11,7 +11,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import { Formik } from "formik";
 import EmailsSelect from "./EmailsSelect";
 import { commonStyles } from "../commonStyles";
-import { sendEmails } from "../../actions/actions";
+import { sendEmails } from "../../reducers/api";
 import ReactQuill from 'react-quill'; // ES6
 import 'react-quill/dist/quill.snow.css'; // ES6
 import * as Yup from "yup";

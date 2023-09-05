@@ -17,7 +17,7 @@ import { connect } from "react-redux";
 import { Formik } from "formik";
 import {
 	handleItemFormSubmit,
-} from "../../actions/actions";
+} from "../../reducers/api";
 import { withRouter } from "react-router-dom";
 import CustomCircularProgress from "../CustomCircularProgress";
 import * as Yup from "yup";

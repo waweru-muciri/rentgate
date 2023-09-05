@@ -12,7 +12,7 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CustomSnackbar from '../CustomSnackbar'
 import { Formik } from "formik";
-import { uploadFilesToFirebase, deleteUploadedFileByUrl } from "../../actions/actions";
+import { uploadFilesToFirebase, deleteUploadedFileByUrl } from "../../reducers/api";
 import { commonStyles } from "../commonStyles";
 import { withRouter } from "react-router-dom";
 import {

@@ -8,7 +8,7 @@ import LockOutlinedIcon from '@mui/material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import { connect } from "react-redux";
 import { Formik } from "formik";
-import { signInUserWithEmailAndPassword, setCurrentUser } from "../../actions/actions";
+import { signInUserWithEmailAndPassword, setCurrentUser } from "../../reducers/api";
 import PasswordResetDialog from "../../components/login/ResetPassword";
 import * as Yup from "yup";
 import { makeStyles } from "@mui/material/styles";

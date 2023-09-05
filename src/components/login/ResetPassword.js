@@ -6,7 +6,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import * as Yup from "yup";
 import { Formik } from "formik";
-import { resetUserPasswordByEmail } from "../../actions/actions";
+import { resetUserPasswordByEmail } from "../../reducers/api";
 
 
 const ResetPasswordSchema = Yup.object().shape({

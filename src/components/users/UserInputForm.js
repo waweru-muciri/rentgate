@@ -24,7 +24,7 @@ import {
 	uploadFilesToFirebase,
 	deleteUploadedFileByUrl,
 	updateFirebaseUser,
-} from "../../actions/actions";
+} from "../../reducers/api";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import ImageCropper from '../ImageCropper';

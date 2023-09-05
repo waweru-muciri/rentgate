@@ -17,7 +17,7 @@ import {
 	handleItemFormSubmit,
 	uploadFilesToFirebase,
 	deleteUploadedFileByUrl,
-} from "../../actions/actions";
+} from "../../reducers/api";
 import { withRouter } from "react-router-dom";
 import { commonStyles } from "../commonStyles";
 import {

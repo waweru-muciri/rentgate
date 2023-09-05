@@ -9,7 +9,7 @@ import Alert from "@material-ui/lab/Alert"
 import Box from "@mui/material/Box"
 import { connect } from "react-redux";
 import { Formik } from "formik";
-import { signUpWithEmailAndPassword } from "../../actions/actions";
+import { signUpWithEmailAndPassword } from "../../reducers/api";
 import { commonStyles } from "../../components/commonStyles";
 import * as Yup from "yup";
 

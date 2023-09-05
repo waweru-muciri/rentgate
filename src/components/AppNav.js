@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import {
     firebaseSignOutUser, setPaginationPage, toggleDrawer
-} from "../actions/actions";
+} from "../reducers/api";
 import {
     withRouter,
     Link,

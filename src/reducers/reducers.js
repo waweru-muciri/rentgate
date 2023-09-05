@@ -1,5 +1,5 @@
 import * as actionTypes from "../assets/actionTypes";
-import * as propertyReducers from "./propertyReducers";
+import * as propertyReducers from "./properties";
 import * as propertyUnitChargesReducers from "./propertyUnitCharges";
 import * as propertyUnitsReducers from "./propertyUnits";
 import * as managementFeesReducers from "./managementFees";

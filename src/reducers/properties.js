@@ -4,19 +4,22 @@ const propertiesSlice = createSlice({
     name: 'properties',
     initialState: [],
     reducers: {
+        properties
         propertyAdded(state, action) {
             state.push(action.payload)
         },
         propertyDeleted(state, action) {
-            state.filter((property) => property.id !== action.payload)
+            return state.filter((property) => property.id !== action.payload)
         },
         propertyEdited(state, action) {
-            let editedProperty = state.find((property) => property.id == action.payload.id)
-            editedProperty = { ...action.payload }
+            return state.map(
+                (property) => property.id === action.payload.id ?
+                    Object.assign({}, property, action.payload) : property
+            );
         }
     }
 })
 
-export const { propertyAdded, propertyToggled } = propertiesSlice.actions
+export const { propertyAdded, propertyDeleted, propertyEdited } = propertiesSlice.actions
 export default propertiesSlice.reducer
 
